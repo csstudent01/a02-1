@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <string>
 
 using namespace std;
 
@@ -11,14 +12,18 @@ int main() {
   float salesTax;
   double taxAmount;
   double reservationCost;
-  double costNoDiscount;
   double discountAmount;
+  double costNoDiscount;
   double costWithDiscount;
   double totalCost;
+  //string F = 'Fall';
+  //string W = 'Winter';
+  //string S = 'Spring';
+  //string S = 'Summer';
 
 //Welcome message
   cout << "Welcome to Resort 161. Answer some questions and I can calculate the reservation cost for your booking." << endl << endl;
-//Ask for user input for season type, number of rooms, days of stay.
+//Ask for user for season type , number of rooms, and days of stay.
   cout << "Pick an option from below" << endl;
   cout << "SEASON: [1]Fall [2]Winter [3]Spring [4]Summer:";
   cin  >> seasonType;
@@ -34,13 +39,13 @@ int main() {
       }
     else if(seasonType == 2){
       reservationCost = 50 * numRooms;
-    }
+      }
     else if(seasonType == 3){
       reservationCost = 75 * numRooms;
-    }
+      }
     else if(seasonType == 4){
-      reservationCost = 100* numRooms;
-    }
+      reservationCost = 100 * numRooms;
+      }
 //Check for discount, with 6+ ROOMS
   if(numRooms >=6){
       discountAmount= reservationCost * 0.10;
@@ -48,18 +53,19 @@ int main() {
       }
     else{
       costWithDiscount = reservationCost;
-    }
+      }
 //SalesTax
+  if()
     taxAmount = costWithDiscount * (salesTax / 100);
 //Total cost
     totalCost = costWithDiscount + taxAmount;
 
   cout << endl << endl;
+  
 
 //Output variables
   cout << "Season:" << setw(30)<< seasonType << endl;
-  cout << "Price per night:";
-  //cin >> ///$$ per night
+  cout << "Price per night:" << setw(7)<< endl;
   cout << "Number of rooms:" <<setw(7)<< numRooms << endl;
   cout << "Days of Stay:" <<setw(7)<< dayOfStay << endl;
   cout << "Price:" <<setw(7)<< costNoDiscount+ taxAmount << endl;
